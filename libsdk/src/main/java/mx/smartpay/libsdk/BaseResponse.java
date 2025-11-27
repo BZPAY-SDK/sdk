@@ -55,11 +55,11 @@ public abstract class BaseResponse implements Serializable {
         this.rspCode = rspCode;
     }
 
-    public string getRespCode() {
+    public String getRespCode() {
         return respCode;
     }
 
-    public void setRespCode(string respCode) {
+    public void setRespCode(String respCode) {
         this.respCode = respCode;
     }
 
