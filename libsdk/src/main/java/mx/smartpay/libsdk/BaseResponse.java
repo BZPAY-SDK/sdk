@@ -73,6 +73,6 @@ public abstract class BaseResponse implements Serializable {
 
     @Override
     public String toString() {
-        return appId + " " + rspCode + " " + respCode; + " " + rspMsg;
+        return appId + " " + rspCode + " " + respCode + " " + rspMsg;
     }
 }
