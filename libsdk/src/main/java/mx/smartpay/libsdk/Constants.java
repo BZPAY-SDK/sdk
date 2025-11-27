@@ -76,6 +76,7 @@ public class Constants {
 
     public static class Resp {
         public static final String RSP_CODE = "_edc_response_code";
+        public static final String RESP_CODE = "_edc_response_code_";
         public static final String RSP_MSG = "_edc_response_message";
 
         public static final String RSP_MERCHANT_NAME = "_edc_response_merchant_name";

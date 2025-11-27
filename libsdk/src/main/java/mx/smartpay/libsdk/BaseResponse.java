@@ -11,6 +11,7 @@ import java.io.Serializable;
 public abstract class BaseResponse implements Serializable {
     private String appId;
     private int rspCode;
+    private String respCode;
     private String rspMsg;
 
     BaseResponse(){
@@ -23,6 +24,7 @@ public abstract class BaseResponse implements Serializable {
     Bundle toBundle(@NonNull Bundle bundle) {
         bundle.putInt(Constants.COMMAND_TYPE, this.getType());
         bundle.putInt(Constants.Resp.RSP_CODE, this.rspCode);
+        bundle.putString(Constants.Resp.RESP_CODE, this.respCode);
         bundle.putString(Constants.Resp.RSP_MSG, this.rspMsg);
         bundle.putString(Constants.APP_ID, this.appId);
         return bundle;
@@ -30,6 +32,7 @@ public abstract class BaseResponse implements Serializable {
 
     void fromBundle(Bundle bundle) {
         this.rspCode = IntentUtil.getIntExtra(bundle, Constants.Resp.RSP_CODE);
+        this.respCode = IntentUtil.getStringExtra(bundle, Constants.Resp.RESP_CODE);
         this.rspMsg = IntentUtil.getStringExtra(bundle, Constants.Resp.RSP_MSG);
         this.appId = IntentUtil.getStringExtra(bundle, Constants.APP_ID);
     }
@@ -52,6 +55,14 @@ public abstract class BaseResponse implements Serializable {
         this.rspCode = rspCode;
     }
 
+    public string getRespCode() {
+        return respCode;
+    }
+
+    public void setRespCode(string respCode) {
+        this.respCode = respCode;
+    }
+
     public String getRspMsg() {
         return rspMsg;
     }
@@ -62,6 +73,6 @@ public abstract class BaseResponse implements Serializable {
 
     @Override
     public String toString() {
-        return appId + " " + rspCode + " " + rspMsg;
+        return appId + " " + rspCode + " " + respCode; + " " + rspMsg;
     }
 }
