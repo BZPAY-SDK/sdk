@@ -15,6 +15,7 @@ public class SaleMsg {
         @IntRange(from=0L,to=9999999999L) private long amount;
         @IntRange(from=0L,to=9999999999L) private long tipAmount;
         private int msi;
+        private String reference;
 
         public Request() {
         }
@@ -34,6 +35,7 @@ public class SaleMsg {
             this.amount = IntentUtil.getLongExtra(bundle, Constants.Req.REQ_AMOUNT);
             this.tipAmount = IntentUtil.getLongExtra(bundle, Constants.Req.REQ_TIP_AMOUNT);
             this.msi = IntentUtil.getIntExtra(bundle, Constants.Req.REQ_MSI);
+            this.reference = IntentUtil.getStringExtra(bundle, Constants.Req.REQ_REFERENCE);
         }
 
         @Override
@@ -43,6 +45,7 @@ public class SaleMsg {
             bundle.putLong(Constants.Req.REQ_AMOUNT, this.amount);
             bundle.putLong(Constants.Req.REQ_TIP_AMOUNT, this.tipAmount);
             bundle.putInt(Constants.Req.REQ_MSI, this.msi);
+            bundle.putString(Constants.Req.REQ_REFERENCE, this.reference);
             return bundle;
         }
 
@@ -50,7 +53,11 @@ public class SaleMsg {
         boolean checkArgs() {
             return true;
         }
+        public String getReference() { return reference;}
 
+        public void setReference(String reference) {
+            this.reference = reference;
+        }
         public long getAmount() {
             return amount;
         }
@@ -85,7 +92,7 @@ public class SaleMsg {
 
         @Override
         public String toString() {
-            return super.toString() + " " + amount + " " + tipAmount + " " + msi;
+            return super.toString() + " " + amount + " " + tipAmount + " " + reference + " " + msi;
         }
     }
 
@@ -107,6 +114,4 @@ public class SaleMsg {
             return true;
         }
     }
-
-
 }

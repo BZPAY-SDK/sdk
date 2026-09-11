@@ -57,10 +57,11 @@ public class Constants {
         static final String REQ_AMOUNT = "_edc_request_amount";
         static final String REQ_TIP_AMOUNT = "_edc_request_tip_amount";
         static final String REQ_MSI = "_edc_request_msi";
+        static final String REQ_REFERENCE = "_edc_request_reference";
         static final String REQ_ORIGINAL_REF_NO = "_edc_request_org_ref_no";
         static final String REQ_ORIGINAL_DATE = "_edc_request_org_date";
         static final String REQ_VOUCHER_NO = "_edc_request_voucher_no";
-
+        static final String REQ_REFERENCE_NO = "_edc_request_reference_no";
         static final String REQ_REPRINT_TYPE = "_edc_request_reprint_type";
         static final String REQ_PRINT_BITMAP = "_edc_request_print_bitmap";
 
@@ -71,8 +72,8 @@ public class Constants {
 
     public static class Resp {
         public static final String RSP_CODE = "_edc_response_code";
+        public static final String RESP_CODE = "_edc_response_code_";
         public static final String RSP_MSG = "_edc_response_message";
-
         public static final String RSP_MERCHANT_NAME = "_edc_response_merchant_name";
         public static final String RSP_MERCHANT_ID = "_edc_response_merchant_id";
         public static final String RSP_TERMINAL_ID = "_edc_response_terminal_id";
@@ -88,7 +89,7 @@ public class Constants {
         public static final String RSP_AUTH_CODE = "_edc_response_auth_code";
         public static final String RSP_CH_SIGNATURE = "_edc_response_cardholder_signature";
         public static final String RSP_CH_SIGNATURE_PATH = "_edc_response_cardholder_signature_path";
-
+        public static final String RSP_REFERENCE = "_edc_response_reference";
         private Resp(){
             //do nothing
         }

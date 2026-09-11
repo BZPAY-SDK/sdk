@@ -35,6 +35,7 @@ public class ReauthMsg {
         void fromBundle(Bundle bundle) {
             super.fromBundle(bundle);
             this.amount = IntentUtil.getLongExtra(bundle, Constants.Req.REQ_AMOUNT);
+            this.voucherNo = IntentUtil.getIntExtra(bundle, Constants.Req.REQ_VOUCHER_NO);
         }
 
         @Override
